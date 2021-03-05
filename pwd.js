@@ -1,8 +1,8 @@
+const done = require('./bash.js');
 const pwd = function (cmd) {
   if (cmd === 'pwd') {
     let wd = process.cwd();
-    process.stdout.write(wd);
-    process.stdout.write('\nprompt > ');
+    done(wd);
   }
 };
 

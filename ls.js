@@ -1,4 +1,5 @@
 const fs = require('fs');
+const done = require('./bash.js');
 
 const ls = function (cmd) {
   if (cmd === 'ls') {
@@ -6,8 +7,7 @@ const ls = function (cmd) {
       if (err) {
         throw err;
       } else {
-        process.stdout.write(files.join('\n'));
-        process.stdout.write('\nprompt > ');
+        done(files.join('\n'));
       }
     });
   }
